@@ -31,7 +31,8 @@ int main() {
     e2.showdata();
 
     cout << "After the statement e3 = e1 * 2" << endl;
-    e3 = e1 * 2;
+    e3 = e1 * 2; //e3=e1.operator(2). object and int are being passed. int is temporary converted into int object and compiler runs the code and multiply object and int by overloaded
+    
     e3.showdata();
 
     cout << "After the statement e4 = 2 * e2" << endl;
