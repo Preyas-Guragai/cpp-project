@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-
+using namespace std;
 // Enum for game choices
 enum class Choice { ROCK, PAPER, SCISSORS };
 
@@ -16,8 +16,8 @@ class HumanPlayer : public Player {
 public:
     Choice getChoice() override {
         int choice;
-        std::cout << "Enter your choice (1 for Rock, 2 for Paper, 3 for Scissors): ";
-        std::cin >> choice;
+        cout << "Enter your choice (1 for Rock, 2 for Paper, 3 for Scissors): ";
+        cin >> choice;
         switch (choice) {
             case 1:
                 return Choice::ROCK;
@@ -52,28 +52,28 @@ public:
 // Function to determine the winner
 void determineWinner(Choice player1, Choice player2) {
     if (player1 == player2) {
-        std::cout << "It's a tie!" << std::endl;
+        cout << "It's a tie!" << endl;
     } else {
         switch (player1) {
             case Choice::ROCK:
                 if (player2 == Choice::SCISSORS) {
-                    std::cout << "Rock crushes Scissors. Player 1 wins!" << std::endl;
+                    cout << "Rock crushes Scissors. Player 1 wins!" << endl;
                 } else {
-                    std::cout << "Paper covers Rock. Player 2 wins!" << std::endl;
+                    cout << "Paper covers Rock. Player 2 wins!" << endl;
                 }
                 break;
             case Choice::PAPER:
                 if (player2 == Choice::ROCK) {
-                    std::cout << "Paper covers Rock. Player 1 wins!" << std::endl;
+                    cout << "Paper covers Rock. Player 1 wins!" << endl;
                 } else {
-                    std::cout << "Scissors cuts Paper. Player 2 wins!" << std::endl;
+                    cout << "Scissors cuts Paper. Player 2 wins!" << endl;
                 }
                 break;
             case Choice::SCISSORS:
                 if (player2 == Choice::PAPER) {
-                    std::cout << "Scissors cuts Paper. Player 1 wins!" << std::endl;
+                    cout << "Scissors cuts Paper. Player 1 wins!" << endl;
                 } else {
-                    std::cout << "Rock crushes Scissors. Player 2 wins!" << std::endl;
+                    cout << "Rock crushes Scissors. Player 2 wins!" << endl;
                 }
                 break;
         }
@@ -91,34 +91,34 @@ int main() {
         Choice humanChoice = human.getChoice();
         Choice computerChoice = computer.getChoice();
 
-        std::cout << "Human chose: ";
+        cout << "Human chose: ";
         switch (humanChoice) {
             case Choice::ROCK:
-                std::cout << "Rock" << std::endl;
+                cout << "Rock" << endl;
                 break;
             case Choice::PAPER:
-                std::cout << "Paper" << std::endl;
+                cout << "Paper" << endl;
                 break;
             case Choice::SCISSORS:
-                std::cout << "Scissors" << std::endl;
+                cout << "Scissors" << std::endl;
                 break;
         }
         std::cout << "Computer chose: ";
         switch (computerChoice) {
             case Choice::ROCK:
-                std::cout << "Rock" << std::endl;
+                cout << "Rock" << endl;
                 break;
             case Choice::PAPER:
-                std::cout << "Paper" << std::endl;
+                cout << "Paper" <<endl;
                 break;
             case Choice::SCISSORS:
-                std::cout << "Scissors" << std::endl;
+                cout << "Scissors" <<endl;
                 break;
         }
         determineWinner(humanChoice, computerChoice);
 
-        std::cout << "Play again? (y/n): ";
-        std::cin >> response;
+        cout << "Play again? (y/n): ";
+        cin >> response;
     } while (response == 'y');
 
     return 0;
