@@ -5,9 +5,18 @@ class example {
     int i;
     float j;
 public:
-    example() { i = 0; j = 0; }
-    example(int x) { i = x; j = 0; }
-    example(int x, float y) { i = x; j = y; }
+    example()
+{ i = 0; 
+j = 0; }
+    example(int x) 
+{ 
+i = x; 
+j = 0; }
+    example(int x, float y) 
+{
+ i = x; 
+j = y; 
+}
 
     void showdata() {
         cout << i << "\t" << j << endl;
@@ -15,7 +24,9 @@ public:
 
     friend example operator*(example , example );
 };
-    example operator*(example e1, example e2) {
+    example operator*(example e1, example e2)
+//objects are taken as arguments. 
+ {
         example temp;
         temp.i = e1.i * e2.i;
         temp.j = e1.j * e2.j;
